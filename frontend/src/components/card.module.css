@@ -1,0 +1,64 @@
+.divcard{
+    width: 600px;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+    display: inline-block;
+    margin: 100px;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.divform{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.divform1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    
+}
+
+.divform2{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+    
+}
+
+.divform3{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 50px;
+}
+
+h2{
+    color: #009373;
+}
+
+.divbutton{
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.descricao{
+    height: 100px;
+    resize: none;
+}

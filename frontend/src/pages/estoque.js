@@ -1,0 +1,67 @@
+import styles from './padrao.module.css';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import alterar from '../assets/alterar.png';
+import Excluir from '../components/excluir';
+import React from "react";
+
+
+export default function Estoque() {
+  const [post, setPost] = useState(null);
+
+
+  const fetchData = async () => {
+    axios.get('http://127.0.0.1:5000/api/list_estoque')
+      .then(response => {
+        setPost(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if(!post) return null; 
+
+
+  return (
+    <div className={styles.containerEstoque}>
+    <div className={styles.estoque}>
+        <h1>Estoque</h1>
+        <table>
+            <thead className={styles.linhasTabela}>
+                <tr>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Serial</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                {post.map(post => (
+                    <tr key={post.id}>
+                        <td>{post.id}</td>
+                        <td>{post.nome}</td>
+                        <td>{post.quantidade}</td>
+                        <td>{post.serial}</td>
+                        <td>{post.descricao}</td>
+                        <td><Link to={{ pathname:`/pages/alterar/${post.id}`}} className={styles.link_menu} ><img src={alterar}/></Link></td>
+                        <td><Excluir/></td>
+                        
+                    </tr>
+                    
+                ))}
+            </tbody>
+        </table>
+    </div>
+    
+    </div>
+);
+
+}

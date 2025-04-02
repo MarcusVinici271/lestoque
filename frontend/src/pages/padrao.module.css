@@ -1,0 +1,62 @@
+.allhome{
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar{
+    margin-top: 20px;
+    width: 25%;
+    border-radius: 10px;
+    margin-left: 10px;
+    height: 700px;
+    background-color: #ffffff;
+
+}
+
+.center{
+    border-radius: 10px;
+    background-color: #ffffff;
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 800px;
+}
+
+.estoque{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 80%;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    
+}
+
+.containerEstoque{
+    display: flex;
+    justify-content: center;
+}
+
+.estoque table{
+    border-collapse: collapse;
+}
+
+.estoque thead{
+    
+    text-align: center;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+.estoque td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    border-collapse: collapse;
+  }
+
+
+

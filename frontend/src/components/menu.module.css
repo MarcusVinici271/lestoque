@@ -1,0 +1,22 @@
+.divmenu{
+    background-color: #009373;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    align-items: center;
+}
+
+.link_menu{
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+img{
+    width: 60px;
+}
