@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# PROPOSTA DE ONBOARDING LESTE - Marcus
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Objetivos
 
-## Available Scripts
+Este projeto tem como objetivo: 
+(i) exercitar lógica deprogramação; 
+(ii) se familiarizar com a stack utilizada no setor;
+(iii) se adequar ao padrão de desenvolvimento que vem sendo estabelecido ao longo dos últimos meses. 
 
-In the project directory, you can run:
+O projeto consistirá em desenvolvimento back-end, com o microframework Python Flask, desenvolvimento front-end, com ReactJS, modelagem de dados no MySql, e configuração do servidor web Nginx. O projeto deverá ser executado em uma VM no Proxmox, utilizar o protocolo https, e utilizar um IP configurado na VLAN 42.
 
-### `npm start`
+## Descrição do projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Back-end
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+➢ Criar uma API REST simples com Flask
 
-### `npm test`
+➢ CRUD completo com integração ao banco de dados
+(MariaDB/MySQL).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+➢ Implementação de autenticação básica, podendo ser local,
+sem necessidade de utilizar o LDAP de início (Com opção
+de escolha).
 
-### `npm run build`
+### Front-end
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+➢ Criar uma interface em React conectada ao back-end via
+fetch ou axios.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+➢ Utilizar React Router para navegação entre páginas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+➢ Adicionar um sistema básico de login.
 
-### `npm run eject`
+### Banco de Dados
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+➢ Criar um banco de dados MariaDB/MySQL com, pelo menos, as
+tabelas switches e usuários (autenticação).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Organização do projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+➢ Utilizar estrutura padrão no Front-end (/components,
+/public, /assets, /utils).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+➢ Criar um .env para configuração do ambiente.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Documentação
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+➢ Criar um repositório privado no Github para versionar o
+projeto;
 
-### Code Splitting
+➢ Criar um README com instruções de uso e exemplos;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+➢ Documentar o avanço do projeto pelo Open Project;
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+➢ Código devidamente comentado;
