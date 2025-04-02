@@ -6,9 +6,8 @@ import Login from './pages/login.js';
 function App() {
   return (
     <>
-    <Login/>
-    <div className="App">      
-        
+    <div className="App">  
+    <Login/>   
     </div>
     </>
   );

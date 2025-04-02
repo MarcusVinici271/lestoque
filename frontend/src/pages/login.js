@@ -9,7 +9,7 @@ export default function Login() {
 
         if (username === "admin" && password === "admin") {
             alert("Login bem-sucedido!");
-            window.location.href = "/pages/estoque";
+            window.location.href = "/pages/home";
         } else {
             alert("Nome de usuário ou senha incorretos.");
             window.location.reload()
