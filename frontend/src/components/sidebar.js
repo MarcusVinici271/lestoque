@@ -39,7 +39,7 @@ export default function Grafico() {
             <Pie 
                 data={top_produtos} 
                 dataKey="quantidade"  // Certifique-se de que a API retorna essa chave
-                nameKey="nome"       // Confirme se "nome" é o campo correto
+                nameKey="produto"       // Confirme se "nome" é o campo correto
                 cx="50%" 
                 cy="60%" 
                 outerRadius={150} 

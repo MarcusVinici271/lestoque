@@ -7,8 +7,7 @@ import Config from './pages/config'; // Importe Config
 import Cadastrar from './pages/cadastrar'; // Importe Cadastrar
 import Alterar from './pages/alterar'; // Importe Alterar
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Menu from "./components/menu.js";
-import Index from "./pages/index.js";
+
 
 function App() {
   return (

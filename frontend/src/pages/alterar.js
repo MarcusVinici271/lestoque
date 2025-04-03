@@ -10,7 +10,7 @@ export default function Alterar(){
     return(
         <>
         <Menu />
-        <div>
+        <div className={styles.allhome}> 
         <Card titulo='Alterar Produto' modulo='Alterar'/>    
         </div>
         </>

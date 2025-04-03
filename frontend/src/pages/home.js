@@ -3,7 +3,6 @@ import Estoque from './estoque';
 import Grafico from '../components/sidebar';
 import React from "react";
 import Menu from '../components/menu';
-import { Outlet } from 'react-router-dom';
 
 
 

@@ -22,7 +22,7 @@ const style2 = {
   p: 4,
 };
 
-export default function Excluir(props) {
+export default function Excluir({id}) {
 
   const [post, setPost] = useState(null);
   const [open, setOpen] = React.useState(false);
@@ -48,6 +48,7 @@ export default function Excluir(props) {
 
 
     const deletarProduto = async (id) => {
+        console.log("Id:", id);
         const response = await fetch(`http://127.0.0.1:5000/api/deletar_produto/${id}`, {
             method: 'DELETE',
             headers: {
@@ -57,6 +58,7 @@ export default function Excluir(props) {
     
         if (response.ok) {
             alert('Produto excluído com sucesso!');
+            window.location.reload();
             fetchData();
         } else {
             alert('Erro ao excluir o produto.');
@@ -89,7 +91,7 @@ return (
               Você tem certeza que deseja excluir o produto?
           </Typography><br/>
           <Button  className='custonButton' variant='contained' color='success' onClick={handleClose}>Voltar</Button>
-          <Button  className='custonButton' variant='contained' color='error' onClick={deletarProduto}>Excluir</Button>
+          <Button  className='custonButton' variant='contained' color='error' onClick={() => deletarProduto(id)}>Excluir</Button>
           
         </Box>
       </Fade>

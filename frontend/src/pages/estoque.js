@@ -6,10 +6,11 @@ import alterar from '../assets/alterar.png';
 import Excluir from '../components/excluir';
 import React from "react";
 import Menu from '../components/menu';
+import { useLocation } from 'react-router-dom';
 
 export default function Estoque() {
   const [post, setPost] = useState(null);
-
+  const location = useLocation();
 
   const fetchData = async () => {
     axios.get('http://127.0.0.1:5000/api/list_estoque')
@@ -19,9 +20,7 @@ export default function Estoque() {
       .catch(error => {
         console.log(error);
       });
-    }
-
-  
+    } 
   useEffect(() => {
     fetchData();
   }, []);
@@ -32,9 +31,9 @@ export default function Estoque() {
 
   return (
     <>
-    <Menu />
+    {location.pathname === '/pages/estoque' && <Menu />} 
     
-    </>
+    
     <div className={styles.containerEstoque}>
     <div className={styles.estoque}>
         <h1>Estoque</h1>
@@ -52,12 +51,12 @@ export default function Estoque() {
                 {post.map(post => (
                     <tr key={post.id}>
                         <td>{post.id}</td>
-                        <td>{post.nome}</td>
+                        <td>{post.produto}</td>
                         <td>{post.quantidade}</td>
                         <td>{post.serial}</td>
                         <td>{post.descricao}</td>
                         <td><Link to={{ pathname:`/pages/alterar/${post.id}`}} className={styles.link_menu} ><img src={alterar}/></Link></td>
-                        <td><Excluir/></td>
+                        <td><Excluir id={post.id} /></td>
                         
                     </tr>
                     

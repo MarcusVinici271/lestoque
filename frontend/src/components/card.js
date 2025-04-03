@@ -8,7 +8,7 @@ import React from 'react';
 
 
 export default function Card({titulo, modulo}){
-    const [nome, setNome] = useState('');
+    const [produto, setProduto] = useState('');
     const [serial, setSerial] = useState('');
     const [quantidade, setQuantidade] = useState('');
     const [descricao, setDescricao] = useState('');
@@ -16,11 +16,14 @@ export default function Card({titulo, modulo}){
     const navigate = useNavigate(); 
        
     
-
+    const voltarHome = () => {
+        navigate('/pages/home'); // Redireciona para a página inicial
+      };
+      
     useEffect(() => {
         if(modulo === 'Alterar'){            
            axios.get(`http://127.0.0.1:5000/api/list_produto/${id}`).then((response) => {
-            setNome(response.data.nome);
+            setProduto(response.data.produto);
             setQuantidade(response.data.quantidade);
             setSerial(response.data.serial);
             setDescricao(response.data.descricao);
@@ -31,7 +34,7 @@ export default function Card({titulo, modulo}){
 
     const enviarDados = () => {        
         axios.post('http://127.0.0.1:5000/api/cadastrar_estoque', {
-            nome: nome,
+            produto: produto,
             quantidade: quantidade,
             serial: serial,
             descricao: descricao,
@@ -43,6 +46,7 @@ export default function Card({titulo, modulo}){
         .then((response) => {
             console.log(response.data);
             alert('Dados enviados com sucesso!');
+            navigate('/pages/home');
         })
         .catch((error) => {
             console.error('Erro ao enviar dados:', error);
@@ -50,16 +54,14 @@ export default function Card({titulo, modulo}){
         });
     };
     
-    const voltarHome = () => {
-        navigate('/pages/home'); // Redireciona para a página inicial
-      };
+    
 
     const alterarProduto = async () => {
         console.log(id);
         try {
           const response = await axios.put(`http://127.0.0.1:5000/api/alterar_produto`, {
             id: id,
-            nome: nome,
+            produto: produto,
             quantidade: quantidade,
             serial: serial,
             descricao: descricao,
@@ -88,7 +90,7 @@ export default function Card({titulo, modulo}){
                                 <label >Descrição</label>
                             </div>
                             <div className={styles.divform2}>
-                                <input type='text' name='nome' value={nome} onChange={(e) => setNome(e.target.value)} /><br />
+                                <input type='text' name='nome' value={produto} onChange={(e) => setProduto(e.target.value)} /><br />
                                 <input type='number' name='quantidade' value={quantidade} onChange={(e) => setQuantidade(e.target.value)} /><br />
                                 <input type='text' name='serial' value={serial} onChange={(e) => setSerial(e.target.value)} /><br />
                                 <textarea className={styles.descricao} value={descricao} onChange={(e) => setDescricao(e.target.value)} />

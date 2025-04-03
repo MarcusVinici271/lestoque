@@ -45,7 +45,7 @@ def list_produto(id):
 @app.route('/api/cadastrar_estoque', methods=['POST'])
 def cadastrar_estoque():
         data = request.get_json()  
-        nome = data['nome']
+        produto = data['produto']
         quantidade = data['quantidade']
         serial = data['serial']
         descricao = data['descricao']
@@ -53,8 +53,8 @@ def cadastrar_estoque():
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
         cursor.execute(
-            'INSERT INTO estoque (nome, quantidade, serial, descricao) VALUES (%s, %s, %s, %s)', 
-            (nome, quantidade, serial, descricao),)
+            'INSERT INTO estoque (produto, quantidade, serial, descricao) VALUES (%s, %s, %s, %s)', 
+            (produto, quantidade, serial, descricao),)
         conn.commit()
         close_connection(conn)
 
@@ -65,15 +65,15 @@ def cadastrar_estoque():
 def alterar_produto():    
         data = request.get_json()
         id = data['id']
-        nome = data['nome']
+        produto = data['produto']
         quantidade = data['quantidade']
         serial = data['serial']
         descricao = data['descricao']
         conn = get_connection()
         cursor = conn.cursor(dictionary=True)
         cursor.execute(
-            'UPDATE estoque SET nome = %s, quantidade = %s, serial = %s, descricao = %s WHERE id = %s',
-            (nome, quantidade, serial, descricao, id)  # Adicionamos o ID na tupla
+            'UPDATE estoque SET produto = %s, quantidade = %s, serial = %s, descricao = %s WHERE id = %s',
+            (produto, quantidade, serial, descricao, id)  # Adicionamos o ID na tupla
         )
         conn.commit()
         close_connection(conn)
