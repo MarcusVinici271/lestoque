@@ -51,7 +51,7 @@ export default function Card({titulo, modulo}){
     };
     
     const voltarHome = () => {
-        navigate('/'); // Redireciona para a página inicial
+        navigate('/pages/home'); // Redireciona para a página inicial
       };
 
     const alterarProduto = async () => {

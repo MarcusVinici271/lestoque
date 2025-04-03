@@ -5,7 +5,7 @@ import axios from 'axios';
 import alterar from '../assets/alterar.png';
 import Excluir from '../components/excluir';
 import React from "react";
-
+import Menu from '../components/menu';
 
 export default function Estoque() {
   const [post, setPost] = useState(null);
@@ -26,10 +26,15 @@ export default function Estoque() {
     fetchData();
   }, []);
 
-  if(!post) return null; 
+  if(!post) 
+    return ("carregando...") ; 
 
 
   return (
+    <>
+    <Menu />
+    
+    </>
     <div className={styles.containerEstoque}>
     <div className={styles.estoque}>
         <h1>Estoque</h1>
@@ -62,6 +67,8 @@ export default function Estoque() {
     </div>
     
     </div>
+
+    </>
 );
 
 }

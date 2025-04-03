@@ -1,15 +1,17 @@
 import './login.css';
 import Button from '../components/button';
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+    const navigate = useNavigate()
 
     const handleLogin = () => {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        if (username === "admin" && password === "admin") {
+        if (username === "" && password === "") {
             alert("Login bem-sucedido!");
-            window.location.href = "/pages/home";
+            navigate ('/pages/home');
         } else {
             alert("Nome de usuário ou senha incorretos.");
             window.location.reload()
