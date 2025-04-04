@@ -68,7 +68,8 @@ export default function Excluir({id}) {
 
 return (
   <div>
-    <Button onClick={handleOpen}><img src={excluir} /></Button>
+    <a onClick={handleOpen}><img src={excluir} className="imgEstoque"/></a>
+    {/* <Button onClick={handleOpen}><img src={excluir} className="imgEstoque"/></Button> */}
     <Modal
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"

@@ -3,3 +3,8 @@
     margin: 10px !important;
     margin-left: 60px !important;
 }
+
+.imgEstoque{
+    width: 50px;
+    cursor: pointer;
+}

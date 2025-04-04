@@ -17,6 +17,21 @@ nav{
     font-weight: bolder;
 }
 
-img{
+.imgMenu {
     width: 60px;
+}
+
+.userSection{
+    display: flex;
+    font-weight: bolder;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imgMenu2{
+    width: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+    
 }

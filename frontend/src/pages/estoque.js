@@ -33,10 +33,9 @@ export default function Estoque() {
     <>
     {location.pathname === '/pages/estoque' && <Menu />} 
     
-    
     <div className={styles.containerEstoque}>
     <div className={styles.estoque}>
-        <h1>Estoque</h1>
+        <h1 className={styles.tituloEstoque}>Estoque</h1>
         <table>
             <thead className={styles.linhasTabela}>
                 <tr>
@@ -55,7 +54,7 @@ export default function Estoque() {
                         <td>{post.quantidade}</td>
                         <td>{post.serial}</td>
                         <td>{post.descricao}</td>
-                        <td><Link to={{ pathname:`/pages/alterar/${post.id}`}} className={styles.link_menu} ><img src={alterar}/></Link></td>
+                        <td><Link to={{ pathname:`/pages/alterar/${post.id}`}} className={styles.link_menu} ><img className={styles.imgEstoque} src={alterar}/></Link></td>
                         <td><Excluir id={post.id} /></td>
                         
                     </tr>

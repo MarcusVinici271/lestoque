@@ -77,6 +77,7 @@ export default function Card({titulo, modulo}){
 
     return(
         <>
+        <div className={styles.divConfig}>
         <div className={styles.divcard}>
             <h2>{titulo}</h2>            
             <div className={styles.divform}>            
@@ -110,24 +111,28 @@ export default function Card({titulo, modulo}){
                 {modulo === 'Config' &&
                     (
                         <>
-                        <div className= {styles.divform1}>                            
-                                <label>Usuário</label>
-                                <label>Senha</label>
-                                <label >Nova Senha</label>
-                            </div>
-                            <div className= {styles.divform3}>
-                                <input type='text'></input><br/>
-                                <input type='text'></input><br/>
-                                <input type='text'></input><br/>
-                                <input type='text'></input><br/>
-                                <Button type='button' onClick={enviarDados} texto='Salvar' />
-                                <Button type='button' texto='Cancelar' onClick={voltarHome} />
-                                
-                        </div>
+                            
+                                    <div className= {styles.divform4}>                            
+                                            <label>Usuário</label>
+                                            <label>Senha</label>
+                                            <label >Nova Senha</label>
+                                    </div>
+                                    <div className= {styles.divform3}>
+                                        <input type='text'></input><br/>
+                                        <input type='text'></input><br/>
+                                        <input type='text'></input><br/>
+                                        <input type='text'></input><br/>
+                                    </div>
+                                    <div className={styles.divbutton}> 
+                                    <Button type='button' onClick={enviarDados} texto='Salvar' />
+                                    <Button type='button' texto='Cancelar' onClick={voltarHome} />
+                                    </div>
+                            
                         </>
                     )
                 }
                 </div>
+           </div>
            </div>
            </>
     )

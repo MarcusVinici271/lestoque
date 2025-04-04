@@ -16,10 +16,8 @@ export default function Home() {
                 <Grafico />
             </div>
             <div className={styles.center}>
-                <Estoque/>
-                
-            </div>
-           
+                <Estoque/>   
+            </div> 
         </div>
         </>
     );

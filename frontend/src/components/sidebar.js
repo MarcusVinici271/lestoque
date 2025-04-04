@@ -31,7 +31,7 @@ export default function Grafico() {
 
     return (
         <>
-        <h2 className={styles.titulo}>Quantidade</h2>
+        <h2 className={styles.titulo}>Quantidades</h2>
         <div className={styles.grafico}>
         
             <div>
