@@ -5,7 +5,6 @@
 nav{
     display: flex;
     justify-content: space-evenly;
-    padding: 20px;
     align-items: center;
 }
 
@@ -18,7 +17,7 @@ nav{
 }
 
 .imgMenu {
-    width: 60px;
+    width:150px;
 }
 
 .userSection{

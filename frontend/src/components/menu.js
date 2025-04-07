@@ -1,6 +1,6 @@
 import styles from './menu.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-import leste from '../assets/leste.svg';
+import lestoque from '../assets/lestoque.png';
 import React, {useState, useEffect }from "react";
 import sair from '../assets/sair.png';
 
@@ -24,7 +24,7 @@ export default function Menu(){
     return(
         <div className={styles.divmenu}>
             <nav>
-            <img className={styles.imgMenu} src={leste}></img>
+            <img className={styles.imgMenu} src={lestoque}></img>
             <Link to='/pages/home' className={styles.link_menu} >Home</Link>
             <Link to='/pages/cadastrar' className={styles.link_menu}>Cadastrar</Link>
             <Link to='/pages/estoque' className={styles.link_menu} >Estoque</Link>

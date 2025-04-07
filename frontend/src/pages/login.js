@@ -3,6 +3,7 @@ import Button from '../components/button';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useState } from 'react';
+import lestoque from '../assets/lestoque.png'
 
 export default function Login({ onLoginSuccess }) {
     const navigate = useNavigate()
@@ -46,8 +47,8 @@ export default function Login({ onLoginSuccess }) {
         </div>
         <div className="containerLogin">
             
-                <h1>Lestoque</h1>
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                <img className="imgLogin"src={lestoque}/>
+                {errorMessage && alert(errorMessage)}
                 <div className='formLogin1'>
                 <label htmlFor="username">Usuário:</label><br/>
                 <input type="text" id="username" name="username" required />
