@@ -2,12 +2,21 @@ import './login.css';
 import Button from '../components/button';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import { useState } from 'react';
-import lestoque from '../assets/lestoque.png'
+import { useEffect, useState } from 'react';
+import lestoque from '../assets/lestoque.png';
+import backend from '../config';
+
 
 export default function Login({ onLoginSuccess }) {
     const navigate = useNavigate()
+    //const backend_ip = config.backend
     const [errorMessage, setErrorMessage] = useState('');
+
+    useEffect (()=> {
+        console.log('BACKEND:', backend);
+
+    }
+    ) 
 
     const handleLogin = async () => {
         const username = document.getElementById("username").value;
@@ -18,7 +27,7 @@ export default function Login({ onLoginSuccess }) {
             return;
 
         } try{
-            const response = await axios.post('http://127.0.0.1:5000/api/login', {
+            const response = await axios.post(`${backend}/api/login`, {
                 usuario: username,
                 senha: password
             });

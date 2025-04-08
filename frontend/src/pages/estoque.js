@@ -7,13 +7,15 @@ import Excluir from '../components/excluir';
 import React from "react";
 import Menu from '../components/menu';
 import { useLocation } from 'react-router-dom';
+import backend from '../config';
+
 
 export default function Estoque() {
   const [post, setPost] = useState(null);
   const location = useLocation();
 
   const fetchData = async () => {
-    axios.get('http://127.0.0.1:5000/api/list_estoque')
+    axios.get(`${backend}/api/list_estoque`)
       .then(response => {
         setPost(response.data);
       })

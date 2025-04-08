@@ -9,6 +9,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import excluir from '../assets/excluir.png';
 import './excluir.css'
+import backend from '../config';
+
 
 const style2 = {
   position: 'absolute',
@@ -30,7 +32,7 @@ export default function Excluir({id}) {
   const handleClose = () => setOpen(false);
 
   const fetchData = async () => {
-    axios.get('http://127.0.0.1:5000/api/list_estoque')
+    axios.get(`${backend}/api/list_estoque`)
       .then(response => {
         setPost(response.data);
       })
@@ -49,7 +51,7 @@ export default function Excluir({id}) {
 
     const deletarProduto = async (id) => {
         console.log("Id:", id);
-        const response = await fetch(`http://127.0.0.1:5000/api/deletar_produto/${id}`, {
+        const response = await fetch(`${backend}/api/deletar_produto/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

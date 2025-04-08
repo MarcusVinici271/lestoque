@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 import styles from './sidebar.module.css';
+import backend from '../config';
+
 
 export default function Grafico() {
     const cores = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
     const [post, setPost] = useState(null);
 
     const fetchData = async () => {
-      axios.get('http://127.0.0.1:5000/api/list_estoque')
+      axios.get(`${backend}/api/list_estoque`)
         .then(response => {
           setPost(response.data);
         })

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import React from 'react';
-
+import backend from '../config';
 
 
 export default function Card({titulo, modulo}){
@@ -22,7 +22,7 @@ export default function Card({titulo, modulo}){
       
     useEffect(() => {
         if(modulo === 'Alterar'){            
-           axios.get(`http://127.0.0.1:5000/api/list_produto/${id}`).then((response) => {
+           axios.get(`${backend}/api/list_estoque/${id}`).then((response) => {
             setProduto(response.data.produto);
             setQuantidade(response.data.quantidade);
             setSerial(response.data.serial);
@@ -33,7 +33,7 @@ export default function Card({titulo, modulo}){
 
 
     const enviarDados = () => {        
-        axios.post('http://127.0.0.1:5000/api/cadastrar_estoque', {
+        axios.post(`${backend}/api/cadastrar_estoque`, {
             produto: produto,
             quantidade: quantidade,
             serial: serial,
@@ -59,7 +59,7 @@ export default function Card({titulo, modulo}){
     const alterarProduto = async () => {
         console.log(id);
         try {
-          const response = await axios.put(`http://127.0.0.1:5000/api/alterar_produto`, {
+          const response = await axios.put(`${backend}/api/alterar_produto`, {
             id: id,
             produto: produto,
             quantidade: quantidade,
