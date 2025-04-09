@@ -19,7 +19,6 @@ const style2 = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
@@ -71,7 +70,6 @@ export default function Excluir({id}) {
 return (
   <div>
     <a onClick={handleOpen}><img src={excluir} className="imgEstoque"/></a>
-    {/* <Button onClick={handleOpen}><img src={excluir} className="imgEstoque"/></Button> */}
     <Modal
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"

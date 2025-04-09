@@ -22,7 +22,7 @@ export default function Card({titulo, modulo}){
       
     useEffect(() => {
         if(modulo === 'Alterar'){            
-           axios.get(`${backend}/api/list_estoque/${id}`).then((response) => {
+           axios.get(`${backend}/api/list_produto/${id}`).then((response) => {
             setProduto(response.data.produto);
             setQuantidade(response.data.quantidade);
             setSerial(response.data.serial);
@@ -57,7 +57,6 @@ export default function Card({titulo, modulo}){
     
 
     const alterarProduto = async () => {
-        console.log(id);
         try {
           const response = await axios.put(`${backend}/api/alterar_produto`, {
             id: id,
